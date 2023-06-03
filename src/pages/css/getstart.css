@@ -1,0 +1,23 @@
+.start_ct{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 1rem;
+}
+
+.start{
+    background-color: transparent;
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid red;
+}
+.pic{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+img{
+    width: 200px;
+    height: auto;
+}

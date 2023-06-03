@@ -1,0 +1,23 @@
+body{
+    background-color: #26294b !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.button_c{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+button{
+    align-items: center;
+    justify-content: center;
+}
+
+
+img{
+    width: 100px;
+    height: auto;
+}
