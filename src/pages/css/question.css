@@ -1,0 +1,14 @@
+.container{
+    color: whitesmoke;
+}
+.answer{
+    /* width: 55%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; */
+}
+.border{
+    border-radius: 20px;
+    margin: 0.5rem 2rem;
+}

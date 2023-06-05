@@ -1,0 +1,23 @@
+.white{
+    color: whitesmoke!important;
+    display: flex;
+    align-items: center;
+    justify-content: center;}
+    
+    .mycontainer{
+        display: grid;
+        align-items: center;
+        justify-content: center;
+    
+    }
+    h1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: whitesmoke;
+    }
+    .center{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }

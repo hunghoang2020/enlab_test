@@ -4,12 +4,22 @@
     display: flex;
     margin-top: 1rem;
 }
-
+body{
+    background-color: #26294b !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
 .start{
-    background-color: transparent;
-    width: 100%;
+    background-color: rgb(236, 60, 60);
+    width: 130px;
     border-radius: 20px;
-    border: 1px solid red;
+    border: 1px solid rgb(236, 60, 60);;
+}
+.start:hover{
+    background-color: rgb(133, 28, 28);
+    color: antiquewhite;
 }
 .pic{
     display: flex;
@@ -18,6 +28,7 @@
     
 }
 img{
+    border-radius: 50%;
     width: 200px;
     height: auto;
 }
