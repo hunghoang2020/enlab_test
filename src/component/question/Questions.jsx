@@ -9,8 +9,6 @@ import { decode } from "html-entities"
 const Questions = ({ res, handleIsFinishTest }) => {
     const [questions, setQuestions] = useState([])
     const [questionCorrect, setQuestionCorrect] = useState(0)
-    const [correctQuestion, setCorrectQuestion] = useState([])
-    const [isFinish, setIsFinish] = useState(false)
 
     useEffect(() => {
         setQuestions(
