@@ -4,6 +4,8 @@ import Radio from "@mui/material/Radio"
 import RadioGroup from "@mui/material/RadioGroup"
 import FormControlLabel from "@mui/material/FormControlLabel"
 import Button from "@mui/material/Button"
+import { decode } from "html-entities"
+
 const Questions = ({ res, handleIsFinishTest }) => {
     const [questions, setQuestions] = useState([])
     const [questionCorrect, setQuestionCorrect] = useState(0)
@@ -57,7 +59,7 @@ const Questions = ({ res, handleIsFinishTest }) => {
                 return (
                     item.isShow && (
                         <div key={idx_question} className='container'>
-                            <p>{item.question}</p>
+                            <p> {decode(item.question)}</p>
                             <div>
                                 <RadioGroup
                                     aria-labelledby='demo-radio-buttons-group-label'
@@ -70,7 +72,7 @@ const Questions = ({ res, handleIsFinishTest }) => {
                                                 key={idx}
                                                 value={item}
                                                 control={<Radio />}
-                                                label={item}
+                                                label={decode(item)}
                                                 onClick={(e) =>
                                                     handleQuestion(
                                                         e,

@@ -8,7 +8,7 @@ const useCustomHook = () => {
     useEffect(() => {
         const fetchdata = () => {
             axios
-                .get("https://opentdb.com/api.php?amount=2")
+                .get("https://opentdb.com/api.php?amount=8")
                 .then((res) => setRes(res.data.results))
                 .catch((err) => setError(err))
                 .finally(() => setLoading(false))
