@@ -7,9 +7,9 @@ import "./finish.css"
 const Finish = (props) => {
     const navigate = useNavigate()
 
-    const { show, rightanswer } = props
+    const { show, rightanswer, res } = props
     const [timer, setTimer] = useState(0)
-    const [timerFinish, setTimerFinish] = useState(null)
+    // const [timerFinish, setTimerFinish] = useState(null)
     useEffect(() => {
         if (!show) {
             const intervalId = setInterval(() => {
@@ -22,13 +22,7 @@ const Finish = (props) => {
         }
     }, [show])
 
-    // useEffect(() => {
-    //     if(show){
-    //         setTimerFinish(timer)
-    //     }
-    // }, [show])
     const replay = () => {
-        // console.log("asd")
         navigate("/")
     }
     if (show) {
@@ -42,7 +36,7 @@ const Finish = (props) => {
                     id='demo-radio-buttons-group-label'
                     className='white'
                 >
-                    {rightanswer}/10 Better luck next time
+                    {rightanswer}/{res.length} Better luck next time
                 </FormLabel>
                 <br />
 
@@ -50,12 +44,9 @@ const Finish = (props) => {
                     id='demo-radio-buttons-group-label'
                     className='white'
                 >
-                    finish time finish: {timer}
+                    finish time finish: {timer} seconds
                 </FormLabel>
-
                 <br />
-                {/* <div>finish time finish: {timer}</div> */}
-                {/* <button onClick={replay}> Replay</button> */}
                 <Button variant='outlined' onClick={replay}>
                     Play again
                 </Button>

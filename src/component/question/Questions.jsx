@@ -1,15 +1,8 @@
 import React from "react"
 import { useState, useEffect } from "react"
-// Bootstrap CSS
-import "bootstrap/dist/css/bootstrap.min.css"
-// Bootstrap Bundle JS
-import "bootstrap/dist/js/bootstrap.bundle.min"
-
 import Radio from "@mui/material/Radio"
 import RadioGroup from "@mui/material/RadioGroup"
 import FormControlLabel from "@mui/material/FormControlLabel"
-import FormControl from "@mui/material/FormControl"
-import FormLabel from "@mui/material/FormLabel"
 import Button from "@mui/material/Button"
 const Questions = ({ res, handleIsFinishTest }) => {
     const [questions, setQuestions] = useState([])
@@ -28,10 +21,6 @@ const Questions = ({ res, handleIsFinishTest }) => {
             })
         )
     }, [res])
-
-    // useEffect(() => {
-
-    // },[questions])
 
     const handleQuestion = (e, id) => {
         const questionsCorrect = questions.map((item, idx) => {
@@ -62,14 +51,8 @@ const Questions = ({ res, handleIsFinishTest }) => {
         }
     }
 
-    console.log("questions", questions)
-
     return (
         <>
-            {/* <h3>{`Correct: ${questionCorrect} / ${questions.length}`}</h3> */}
-            {/* <p>{
-                ((questionCorrect / questions.length * 100) > 50) ? "Pass"
-            }</p> */}
             {questions?.map((item, idx_question) => {
                 return (
                     item.isShow && (
@@ -78,35 +61,13 @@ const Questions = ({ res, handleIsFinishTest }) => {
                             <div>
                                 <RadioGroup
                                     aria-labelledby='demo-radio-buttons-group-label'
-                                    // defaultValue="female"
                                     name='radio-buttons-group'
                                 >
                                     {item.incorrect_answers.map((item, idx) => {
-                                        // return (
-                                        //     <>
-                                        //         <label
-                                        //             key={idx}
-                                        //             className='answer  '
-                                        //         >
-                                        //             <input
-                                        //                 onClick={(e) =>
-                                        //                     handleQuestion(
-                                        //                         e,
-                                        //                         idx_question
-                                        //                     )
-                                        //                 }
-                                        //                 type='radio'
-                                        //                 value={item}
-                                        //                 name='question'
-                                        //             />
-                                        //             {` ${item}`}
-                                        //         </label>
-                                        //         <br />
-                                        //     </>
-                                        // )
                                         return (
                                             <FormControlLabel
                                                 className='border'
+                                                key={idx}
                                                 value={item}
                                                 control={<Radio />}
                                                 label={item}
@@ -121,9 +82,6 @@ const Questions = ({ res, handleIsFinishTest }) => {
                                     })}
                                 </RadioGroup>
                             </div>
-                            {/* <button onClick={() => handleNext(idx_question)}>
-                                Next
-                            </button> */}
                             <Button
                                 variant='outlined'
                                 onClick={() => handleNext(idx_question)}

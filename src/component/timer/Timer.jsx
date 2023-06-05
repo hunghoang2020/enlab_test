@@ -11,7 +11,6 @@ const Timer = ({ handleIsFinishTest }) => {
 
         return () => clearInterval(intervalId)
     }, [])
-
     return (
         <>
             <div>{timer}</div>

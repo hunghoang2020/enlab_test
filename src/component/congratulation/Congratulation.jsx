@@ -5,7 +5,7 @@ import Button from "@mui/material/Button"
 import FormLabel from "@mui/material/FormLabel"
 import "./congratulation.css"
 const Congratulation = (props) => {
-    const { show, rightanswer } = props
+    const { show, rightanswer, res } = props
     const [timer, setTimer] = useState(0)
     const [timerFinish, setTimerFinish] = useState(null)
     const navigate = useNavigate()
@@ -20,17 +20,10 @@ const Congratulation = (props) => {
             }
         }
     }, [show])
-
-    // useEffect(() => {
-    //     if(show){
-    //         setTimerFinish(timer)
-    //     }
-    // }, [show])
     const replay = () => {
         console.log("asd")
         navigate("/")
     }
-    console.log("questionCorrect", rightanswer)
     if (show) {
         return (
             <div className='mycontainer'>
@@ -42,12 +35,13 @@ const Congratulation = (props) => {
                     id='demo-radio-buttons-group-label'
                     className='white'
                 >
-                    {rightanswer}/10 you are amazing
+                    {rightanswer}/{res.length} you are amazing
                 </FormLabel>
                 <br />
 
-                <div className='white'>Congratulation time finish: {timer}</div>
-                {/* <button onClick={replay}> Replay</button> */}
+                <div className='white'>
+                    Congratulation time finish: {timer} seconds
+                </div>
                 <br />
                 <Button variant='outlined' onClick={replay} className='center'>
                     Play again
